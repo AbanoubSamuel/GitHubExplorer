@@ -1,6 +1,6 @@
 <?php
 
-namespace App\HttpClient;
+namespace App\Services;
 
 
 use Illuminate\Http\Client\Response;
@@ -22,12 +22,14 @@ class GithubService {
         $created = $request->query('created');
         $sort = $request->query('sort');
         $order = $request->query('order');
+        $limit = $request->query('limit');
 
         return Http::get($this->baseUrl, [
             'q' => $query,
             'created' => $created,
             'sort' => $sort,
-            'order' => $order
+            'order' => $order,
+            'limit' => $limit
         ]);
     }
 }

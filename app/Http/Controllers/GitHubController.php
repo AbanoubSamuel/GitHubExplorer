@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\HttpClient\GithubService;
+use App\Services\GithubService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class GitHubController extends Controller {
 
-    public function __construct(private GithubService $githubService)
+    public function __construct(private readonly GithubService $githubService)
     {
 
     }
